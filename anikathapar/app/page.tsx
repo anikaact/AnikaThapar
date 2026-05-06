@@ -38,10 +38,10 @@ export default function Home() {
           {/* Smiski + text share a relative container so smiski moves with the text */}
           <div className="relative max-w-2xl w-full">
             {/* Smiski Image - adjust top/left relative to the text block */}
-            <img src="/laptopsmiski.png" alt="Laptop Smiski" className="h-45 w-45 absolute top-0 left-0" />
+            <img src="/laptopsmiski.png" alt="Laptop Smiski" className="h-45 w-45 absolute top-0 left-0 -mt-29.5 ml-34" />
 
             {/* About Me Title */}
-            <div className="bg-black px-8 py-3 mb-2">
+            <div className="bg-black px-8 py-3 mb-2 w-fit mx-auto">
               <h2 className="text-white text-3xl">about me</h2>
             </div>
 
