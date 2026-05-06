@@ -34,18 +34,18 @@ export default function Home() {
       {/* Main content area */}
       <main className="flex-1 bg-white p-8 md:p-16">
         {/* About Me Section */}
-        <div className="flex flex-col items-center gap-6">
-          {/* Smiski Image */}
-          <img src="/laptopsmiski.png" alt="Laptop Smiski" className="h-32 w-32" />
-          
+        <div className="relative flex flex-col items-center gap-6 mt-50">
+          {/* Smiski Image - freely positioned; adjust top/left to move it */}
+          <img src="/laptopsmiski.png" alt="Laptop Smiski" className="h-45 w-45 absolute top-0 left-0 -mt-29.5 ml-118" />
+
           {/* About Me Title */}
           <div className="bg-black px-8 py-3 mb-2">
             <h2 className="text-white text-3xl">about me</h2>
           </div>
-          
+
           {/* About Me Content */}
           <div className="max-w-2xl text-left">
-            <p className="mb-6 text-xl">Hi! I'm Anika :). A little about me:</p>
+            <p className="mb-6 text-xl">Hi! I'm Anika :) A little about me:</p>
             <ul className="list-disc list-inside space-y-3 text-xl">
               <li>Junior @ Purdue University</li>
               <li>Computer Science major, specializing in SWE and MI</li>
