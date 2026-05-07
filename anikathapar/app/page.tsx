@@ -1,3 +1,5 @@
+import Courses from "./Courses";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -58,6 +60,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <Courses />
     </div>
   );
 }
