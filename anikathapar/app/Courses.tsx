@@ -9,19 +9,40 @@ const semesters = [
       { code: "COM 217", name: ["Scientific Writing", "& Presentation"] },
     ],
   },
-  // {
-  //   label: "Fall 2025",
-  //   courses: [
-  //     { code: "CS 180", name: ["Problem Solving &", "Object-Oriented Programming"] },
-  //   ],
-  // },
+   {
+    label: "Fall 2025",
+    courses: [
+      { code: "CS 250", name: ["Computer", "Architecture"] },
+      { code: "CS 251", name: ["Data Structures", "& Algorithms"] },
+      { code: "STAT 350", name: ["Introduction to", "Statistics"] },
+      { code: "ENTR 310", name: ["Management", "for New Ventures"] },
+    ],
+  },
+  {
+    label: "Spring 2025",
+    courses: [
+      { code: "CS 240", name: ["Programming", "in C"] },
+      { code: "CS 182", name: ["Foundations of", "Computer Science"] },
+      { code: "SCLA 101", name: ["Critical Thinking", "& Communication"] },
+      { code: "MA 260", name: ["Linear", "Algebra"] },
+    ],
+  },
+{
+    label: "Fall 2024",
+    courses: [
+      { code: "CS 180", name: ["Object Oriented", "Programming"] },
+      { code: "MA 261", name: ["Multivariate", "Calculus"] },
+      { code: "ENTR 200", name: ["Entrepreneurship", "& Innovation"] },
+      { code: "TDM 101", name: ["The Data", "Mine"] },
+    ],
+  },
 ];
 
 export default function Courses() {
   return (
     <section
       id="courses"
-      className="relative w-full py-16 overflow-hidden"
+      className="relative w-full py-16 overflow-hidden mt-40"
       style={{ backgroundColor: "#8fa876" }}
     >
       {/* Cherry blossom tree - behind everything */}
@@ -31,18 +52,13 @@ export default function Courses() {
         className="absolute top-0 right-0 h-100 -mt-20 w-auto pointer-events-none z-0"
       />
 
-      {/* Scattered blossoms */}
-      <img src="/blossom_1.png" alt="" className="absolute bottom-20 h-34 left-[15%] pointer-events-none z-0" />
-      <img src="/blossom_2.png" alt="" className="absolute bottom-20 h-34 left-[28%] pointer-events-none z-0" />
-      <img src="/blossom_3.png" alt="" className="absolute bottom-20 h-34 right-[25%] pointer-events-none z-0" />
-      <img src="/blossom_1.png" alt="" className="absolute bottom-20 h-34 right-[10%] pointer-events-none z-0" />
 
       {/* Blossoms at the base of the tree */}
-      <img src="/blossom_2.png" alt="" className="absolute bottom-30 h-24 right-[1%] h-16 w-auto pointer-events-none z-0" />
-      <img src="/blossom_3.png" alt="" className="absolute bottom-35 h-34 right-[6%] h-12 w-auto pointer-events-none z-0" />
-      <img src="/blossom_1.png" alt="" className="absolute bottom-40 h-34 right-[11%] h-14 w-auto pointer-events-none z-0" />
-      <img src="/blossom_2.png" alt="" className="absolute bottom-20 h-34 right-[15%] h-10 w-auto pointer-events-none z-0" />
-      <img src="/blossom_3.png" alt="" className="absolute bottom-12 h-34 right-[3%] h-10 w-auto pointer-events-none z-0" />
+      <img src="/blossom_2.png" alt="" className="absolute top-60 h-34 right-[1%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_3.png" alt="" className="absolute top-50 h-34 right-[6%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_1.png" alt="" className="absolute top-60 h-34 right-[11%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_2.png" alt="" className="absolute top-70 h-34 right-[15%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_3.png" alt="" className="absolute top-60 h-34 right-[3%] w-auto pointer-events-none z-0" />
 
       {/* Title */}
       <div className="relative z-10 flex justify-center mb-30">
@@ -53,7 +69,7 @@ export default function Courses() {
 
       {/* Semesters */}
       {semesters.map((semester) => (
-        <div key={semester.label} className="relative z-10 mb-12">
+        <div key={semester.label} className="relative z-10 -mb-5 pb-16">
           <p className="text-center text-white text-2xl mb-10">{semester.label}</p>
 
           {/* Course cards */}
@@ -76,6 +92,12 @@ export default function Courses() {
               </div>
             ))}
           </div>
+
+          {/* Blossoms at the bottom of this row */}
+          <img src="/blossom_1.png" alt="" className="absolute bottom-10 h-34 left-[15%] pointer-events-none z-0" />
+          <img src="/blossom_2.png" alt="" className="absolute bottom-10 h-34 left-[28%] pointer-events-none z-0" />
+          <img src="/blossom_3.png" alt="" className="absolute bottom-10 h-34 right-[25%] pointer-events-none z-0" />
+          <img src="/blossom_1.png" alt="" className="absolute bottom-10 h-34 right-[10%] pointer-events-none z-0" />
         </div>
       ))}
     </section>
