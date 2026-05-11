@@ -1,4 +1,5 @@
 import Courses from "./Courses";
+import Purdue from "./Purdue";
 
 export default function Home() {
   return (
@@ -61,6 +62,7 @@ export default function Home() {
         </div>
       </main>
 
+      <Purdue />
       <Courses />
     </div>
   );
