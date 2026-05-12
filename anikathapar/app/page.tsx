@@ -50,10 +50,15 @@ export default function Home() {
               <p className="mb-6 text-xl">Hi! I'm Anika :) A little about me:</p>
               <ul className="list-disc list-inside space-y-3 text-xl">
                 <li>Junior @ Purdue University</li>
-                <li>Computer Science major, specializing in SWE and MI</li>
+                <li>Computer Science major, specializing in SWE and AI</li>
                 <li>Pursuing a certificate in Entrepreneurship & Innovation</li>
                 <li>LOVES crafts, hiking, and playing pickleball</li>
               </ul>
+              <div className="flex gap-6 mt-6 text-xl">
+                <a href="https://www.linkedin.com/in/anika-thapar/" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">LinkedIn</a>
+                <a href="https://github.com/anikaact" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">GitHub</a>
+                <a href="/Anika_Thapar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Resume</a>
+              </div>
             </div>
           </div>
         </div>

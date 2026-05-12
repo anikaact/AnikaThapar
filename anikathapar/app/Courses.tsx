@@ -30,7 +30,7 @@ const semesters = [
 {
     label: "Fall 2024",
     courses: [
-      { code: "CS 180", name: ["Object Oriented", "Programming"] },
+      { code: "CS 180", name: ["Object-Oriented", "Programming"] },
       { code: "MA 261", name: ["Multivariate", "Calculus"] },
       { code: "ENTR 200", name: ["Entrepreneurship", "& Innovation"] },
       { code: "TDM 101", name: ["The Data", "Mine"] },
