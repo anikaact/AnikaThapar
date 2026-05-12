@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Header with background image */}
       <div
-        className="relative w-full h-120 bg-cover bg-center"
+        className="relative w-full h-140 bg-cover bg-center"
         style={{ backgroundImage: "url('/grassylaptop.jpg')" }}
       >
         {/* Semi-transparent overlay */}
@@ -17,18 +17,15 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl text-black">
             Anika Thapar
           </h1>
-          <nav className="flex flex-col md:text-1l gap-2 text-right">
-            <a href="#courses" className="text-black underline hover:opacity-70">
-              Courses
-            </a>
-            <a href="#career" className="text-black underline hover:opacity-70">
-              Career
+          <nav className="flex flex-col md:text-1l gap-1 text-right text-xl">
+            <a href="#about" className="text-black underline hover:opacity-70">
+              about me
             </a>
             <a href="#purdue" className="text-black underline hover:opacity-70">
-              Purdue
+              purdue
             </a>
-            <a href="#gallery" className="text-black underline hover:opacity-70">
-              Gallery
+            <a href="#courses" className="text-black underline hover:opacity-70">
+              courses
             </a>
           </nav>
         </div>
