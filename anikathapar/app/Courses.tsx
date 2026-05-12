@@ -61,7 +61,7 @@ export default function Courses() {
       <img src="/blossom_3.png" alt="" className="absolute top-60 h-34 right-[3%] w-auto pointer-events-none z-0" />
 
       {/* Title */}
-      <div className="relative z-10 flex justify-center mb-30">
+      <div className="relative z-10 flex justify-center items-center gap-3 mb-30">
         <div className="bg-black px-8 py-3">
           <h2 className="text-white text-3xl">courses</h2>
         </div>

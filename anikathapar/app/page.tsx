@@ -40,9 +40,15 @@ export default function Home() {
             {/* Smiski Image - adjust top/left relative to the text block */}
             <img src="/laptopsmiski.png" alt="Laptop Smiski" className="h-45 w-45 absolute top-0 left-0 -mt-29.5 ml-34" />
 
+            {/* Exclamation marks flanking the smiski */}
+            <span style={{ position: 'absolute', top: 0, marginTop: '-5.5rem', left: '12.5rem', display: 'inline-block', animation: 'sway 1.2s linear infinite', animationDelay: '0s', fontSize: '1.5rem' }}>!</span>
+            <span style={{ position: 'absolute', top: 0, marginTop: '-4.8rem', left: '11.8rem', display: 'inline-block', animation: 'sway 1.2s linear infinite', animationDelay: '0.5s', fontSize: '1.3rem' }}>!</span>
+
             {/* About Me Title */}
-            <div className="bg-black px-8 py-3 mb-2 w-fit mx-auto">
-              <h2 className="text-white text-3xl">about me</h2>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="bg-black px-8 py-3">
+                <h2 className="text-white text-3xl">about me</h2>
+              </div>
             </div>
 
             {/* About Me Content */}

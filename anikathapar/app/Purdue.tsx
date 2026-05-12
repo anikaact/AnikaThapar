@@ -45,14 +45,16 @@ export default function Purdue() {
     <section id="purdue" className="w-full py-16 px-8 md:px-24 bg-white mt-40">
       {/* Title */}
       <div className="flex flex-col items-center mb-10">
-        <div className="relative w-fit mx-auto">
-          <img
-            src="/mofusand.png"
-            alt="Mofusand"
-            className="h-15 absolute top-0 left-1/2 -translate-x-1/2 -mt-15"
-          />
-          <div className="bg-black px-8 py-3">
-            <h2 className="text-white text-3xl">Purdue involvement</h2>
+        <div className="flex items-center justify-center gap-3">
+          <div className="relative w-fit">
+            <img
+              src="/mofusand.png"
+              alt="Mofusand"
+              className="h-15 absolute top-0 left-1/2 -translate-x-1/2 -mt-15"
+            />
+            <div className="bg-black px-8 py-3">
+              <h2 className="text-white text-3xl">Purdue involvement</h2>
+            </div>
           </div>
         </div>
         <p className="text-xl text-center mt-6">
