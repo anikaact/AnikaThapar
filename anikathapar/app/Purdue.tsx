@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const activities = [
   {
     name: "Undergraduate Student Board",
@@ -41,6 +45,8 @@ const activities = [
 ];
 
 export default function Purdue() {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <section id="purdue" className="w-full py-16 px-8 md:px-24 bg-white mt-40">
       {/* Title */}
@@ -52,9 +58,12 @@ export default function Purdue() {
               alt="Mofusand"
               className="h-15 absolute top-0 left-1/2 -translate-x-1/2 -mt-15"
             />
-            <div className="bg-black px-8 py-3">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="bg-black px-8 py-3 flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity"
+            >
               <h2 className="text-white text-3xl">Purdue involvement</h2>
-            </div>
+            </button>
           </div>
         </div>
         <p className="text-xl text-center mt-6">
@@ -62,49 +71,54 @@ export default function Purdue() {
         </p>
       </div>
 
-      {/* Activities */}
-      <div className="flex flex-col gap-0 max-w-5xl mx-auto">
-        {activities.map((activity, i) => (
-          <div key={activity.name}>
-            <div
-              className={`flex flex-col md:flex-row gap-8 items-center py-10 ${
-                activity.imageLeft ? "" : "md:flex-row-reverse"
-              }`}
-            >
-              {/* Image */}
-              <img
-                src={activity.image}
-                alt={activity.imageAlt}
-                className="w-72 h-56 object-cover flex-shrink-0"
-              />
-
-              {/* Content */}
-              <div className="flex-1">
-                <h3 className="text-2xl text-center md:text-left mb-3">{activity.name}</h3>
-                <p className="text-base mb-1">
-                  <span className="font-bold">Role:</span> {activity.role}
-                </p>
-                <p className="text-base mb-1">
-                  <span className="font-bold">Description:</span> {activity.description}
-                </p>
-                <p className="text-base mb-1">
-                  <span className="font-bold">Favorite part:</span> {activity.favorite}
-                </p>
-                <p className="text-base">
-                  <span className="font-bold">Link:</span>{" "}
-                  <a href={activity.href} className="underline hover:opacity-70" target="_blank" rel="noopener noreferrer">
-                    {activity.link}
-                  </a>
-                </p>
+      {/* Collapsible Activities */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: isOpen ? "1fr" : "0fr",
+          transition: "grid-template-rows 0.35s ease",
+        }}
+      >
+        <div style={{ overflow: "hidden" }}>
+          <div className="flex flex-col gap-0 max-w-5xl mx-auto">
+            {activities.map((activity, i) => (
+              <div key={activity.name}>
+                <div
+                  className={`flex flex-col md:flex-row gap-8 items-center py-10 ${
+                    activity.imageLeft ? "" : "md:flex-row-reverse"
+                  }`}
+                >
+                  <img
+                    src={activity.image}
+                    alt={activity.imageAlt}
+                    className="w-72 h-56 object-cover flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-2xl text-center md:text-left mb-3">{activity.name}</h3>
+                    <p className="text-base mb-1">
+                      <span className="font-bold">Role:</span> {activity.role}
+                    </p>
+                    <p className="text-base mb-1">
+                      <span className="font-bold">Description:</span> {activity.description}
+                    </p>
+                    <p className="text-base mb-1">
+                      <span className="font-bold">Favorite part:</span> {activity.favorite}
+                    </p>
+                    <p className="text-base">
+                      <span className="font-bold">Link:</span>{" "}
+                      <a href={activity.href} className="underline hover:opacity-70" target="_blank" rel="noopener noreferrer">
+                        {activity.link}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                {i < activities.length - 1 && (
+                  <hr className="border-t border-gray-300" />
+                )}
               </div>
-            </div>
-
-            {/* Divider between activities */}
-            {i < activities.length - 1 && (
-              <hr className="border-t border-gray-300" />
-            )}
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
