@@ -55,8 +55,7 @@ export default function Home() {
             <div className="text-left">
               <p className="mb-6 text-xl">Hi! I'm Anika :) A little about me:</p>
               <ul className="list-disc list-inside space-y-3 text-xl">
-                <li>Junior @ Purdue University</li>
-                <li>Computer Science major, specializing in SWE and AI</li>
+                <li>CS @ Purdue University</li>
                 <li>Pursuing a certificate in Entrepreneurship & Innovation</li>
                 <li>LOVES crafts, hiking, and playing pickleball</li>
               </ul>
