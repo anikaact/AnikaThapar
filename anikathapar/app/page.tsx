@@ -1,5 +1,6 @@
 import Courses from "./Courses";
 import Purdue from "./Purdue";
+import Experience from "./Experience";
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
                 <a href="https://www.linkedin.com/in/anika-thapar/" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">LinkedIn</a>
                 <a href="https://github.com/anikaact" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">GitHub</a>
                 <a href="/Anika_Thapar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Resume</a>
+                <a href="https://devpost.com/anikaact?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Devpost</a>
               </div>
             </div>
           </div>
@@ -72,6 +74,7 @@ export default function Home() {
 
       <Purdue />
       <Courses />
+      <Experience />
     </div>
   );
 }
