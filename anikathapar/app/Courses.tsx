@@ -48,22 +48,22 @@ export default function Courses() {
   return (
     <section
       id="courses"
-      className="relative w-full py-16 overflow-hidden mt-40"
+      className="relative w-full pt-44 pb-28 overflow-hidden"
       style={{ backgroundColor: "#8fa876" }}
     >
       {/* Cherry blossom tree - behind everything */}
       <img
         src="/mc_cherry_tree.png"
         alt=""
-        className="absolute top-0 right-0 h-100 -mt-20 w-auto pointer-events-none z-0"
+        className="absolute top-0 right-0 h-100 w-auto pointer-events-none z-0"
       />
 
       {/* Blossoms at the base of the tree */}
-      <img src="/blossom_2.png" alt="" className="absolute top-60 h-34 right-[1%] w-auto pointer-events-none z-0" />
-      <img src="/blossom_3.png" alt="" className="absolute top-50 h-34 right-[6%] w-auto pointer-events-none z-0" />
-      <img src="/blossom_1.png" alt="" className="absolute top-60 h-34 right-[11%] w-auto pointer-events-none z-0" />
-      <img src="/blossom_2.png" alt="" className="absolute top-70 h-34 right-[15%] w-auto pointer-events-none z-0" />
-      <img src="/blossom_3.png" alt="" className="absolute top-60 h-34 right-[3%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_2.png" alt="" className="absolute top-80 h-34 right-[1%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_3.png" alt="" className="absolute top-70 h-34 right-[6%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_1.png" alt="" className="absolute top-80 h-34 right-[11%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_2.png" alt="" className="absolute top-90 h-34 right-[15%] w-auto pointer-events-none z-0" />
+      <img src="/blossom_3.png" alt="" className="absolute top-80 h-34 right-[3%] w-auto pointer-events-none z-0" />
 
       {/* Title */}
       <div className="relative z-10 flex justify-center items-center gap-3 mb-10">

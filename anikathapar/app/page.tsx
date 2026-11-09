@@ -12,7 +12,9 @@ export default function Home() {
       >
         {/* Semi-transparent overlay */}
         <div className="absolute inset-0 bg-white opacity-50"></div>
-        
+        {/* Fade the photo into the white section below */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
+
         {/* Header content */}
         <div className="relative h-full flex items-start justify-between px-8 md:px-16 pt-16">
           <h1 className="text-5xl md:text-6xl text-black">
