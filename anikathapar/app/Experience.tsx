@@ -144,18 +144,33 @@ export default function Experience() {
           <img
             src="/lego_orchid.png"
             alt="Lego Orchid"
-            className="h-38 absolute -top-5 left-14 -translate-x-1/2 -mt-32"
+            className="h-39 absolute -top-5 right-10 translate-x-1/2 -mt-32"
           />
           <div className="bg-black px-8 py-3">
             <h2 className="text-white text-3xl">career</h2>
           </div>
-          <Sticker type="sparkle" color="#FFE58A" size={30} className="absolute -top-4 -right-4" />
+          <Sticker type="sparkle" color="#FFE58A" size={30} className="absolute -bottom-4 -right-4" />
         </div>
         <div className="flex items-center gap-5 mt-8">
+          <div className="relative">
+            <img
+              src="/dessert_sticker.png"
+              alt="Pastel dessert illustration sticker"
+              className="h-24 w-24 object-cover rounded-2xl border-[5px] border-white -rotate-6 hover:rotate-0 transition-transform"
+              style={{ boxShadow: "0 4px 10px rgba(120, 60, 90, 0.3)" }}
+            />
+            <Sticker type="sparkle" color="#FFE58A" size={24} className="absolute -top-3 -right-3" />
+          </div>
           <p className="text-xl text-center px-4 py-1 rounded-full bg-white/70">
             here&apos;s where I&apos;ve been working ^-^
           </p>
           <div className="relative">
+            <img
+              src="/bunny_sticker.png"
+              alt="Bunnies circling a heart illustration sticker"
+              className="absolute -top-14 -right-16 h-20 w-20 object-cover rounded-2xl border-[5px] border-white rotate-12 hover:rotate-0 transition-transform"
+              style={{ boxShadow: "0 4px 10px rgba(120, 60, 90, 0.3)" }}
+            />
             <img
               src="/lego_monkey.png"
               alt="Lego monkey minifigure with a banana"

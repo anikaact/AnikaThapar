@@ -5,11 +5,20 @@ import { useState } from "react";
 // Add past semesters here — newest first
 const semesters = [
   {
+    label: "Fall 2026",
+    courses: [
+      { code: "CS 354", name: ["Operating", "Systems"] },
+      { code: "CS 408", name: ["Software", "Testing"] },
+      { code: "PHYS 272", name: ["Electric and", "Magnetic Interactions"] },
+      { code: "ANTH 205", name: ["Human Cultural", "Diversity"] },
+    ],
+  },
+  {
     label: "Spring 2026",
     courses: [
       { code: "CS 252", name: ["Systems", "Programming"] },
       { code: "CS 307", name: ["Software", "Engineering 1"] },
-      { code: "CS 407", name: ["Introduction to", "AI"] },
+      { code: "CS 471", name: ["Introduction to", "AI"] },
       { code: "COM 217", name: ["Scientific Writing", "& Presentation"] },
     ],
   },
@@ -42,6 +51,65 @@ const semesters = [
   },
 ];
 
+// Pixel-art petal shapes (each cell is one "pixel"): 1 = light pink, 2 = mid pink, 3 = deep pink
+const petalShapes = [
+  [
+    [0, 1, 0],
+    [1, 2, 1],
+    [0, 3, 0],
+  ],
+  [
+    [1, 1, 0],
+    [2, 2, 1],
+    [0, 3, 0],
+  ],
+  [
+    [0, 1],
+    [2, 3],
+  ],
+];
+const petalColors = ["", "#fbd3e4", "#f4a6c8", "#e27aa8"];
+
+/** Tiny blocky cherry blossom petal to match the pixel-art tree. */
+function PixelPetal({ shape, pixel }: { shape: number[][]; pixel: number }) {
+  return (
+    <svg
+      width={shape[0].length * pixel}
+      height={shape.length * pixel}
+      viewBox={`0 0 ${shape[0].length} ${shape.length}`}
+      shapeRendering="crispEdges"
+      aria-hidden="true"
+    >
+      {shape.map((row, y) =>
+        row.map((c, x) => (c ? <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={petalColors[c]} /> : null))
+      )}
+    </svg>
+  );
+}
+
+// Petals falling from the top of the section to the bottom, then starting over.
+// More petals start toward the right, under the tree. Negative delay = already mid-fall on load.
+const petals = [
+  { left: "3%", duration: 16, delay: -4, shape: 0, pixel: 4 },
+  { left: "9%", duration: 21, delay: -12, shape: 2, pixel: 4 },
+  { left: "16%", duration: 18, delay: -1, shape: 1, pixel: 3 },
+  { left: "23%", duration: 24, delay: -17, shape: 0, pixel: 5 },
+  { left: "31%", duration: 17, delay: -8, shape: 2, pixel: 3 },
+  { left: "38%", duration: 22, delay: -14, shape: 1, pixel: 4 },
+  { left: "46%", duration: 19, delay: -6, shape: 0, pixel: 3 },
+  { left: "53%", duration: 25, delay: -20, shape: 2, pixel: 5 },
+  { left: "60%", duration: 18, delay: -3, shape: 1, pixel: 4 },
+  { left: "66%", duration: 20, delay: -11, shape: 0, pixel: 4 },
+  { left: "71%", duration: 16, delay: -15, shape: 2, pixel: 3 },
+  { left: "76%", duration: 23, delay: -2, shape: 1, pixel: 5 },
+  { left: "80%", duration: 17, delay: -9, shape: 0, pixel: 4 },
+  { left: "84%", duration: 21, delay: -18, shape: 2, pixel: 4 },
+  { left: "88%", duration: 15, delay: -5, shape: 1, pixel: 3 },
+  { left: "92%", duration: 19, delay: -13, shape: 0, pixel: 5 },
+  { left: "95%", duration: 22, delay: -7, shape: 2, pixel: 4 },
+  { left: "98%", duration: 18, delay: -16, shape: 1, pixel: 3 },
+];
+
 export default function Courses() {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -64,6 +132,22 @@ export default function Courses() {
       <img src="/blossom_1.png" alt="" className="absolute top-80 h-34 right-[11%] w-auto pointer-events-none z-0" />
       <img src="/blossom_2.png" alt="" className="absolute top-90 h-34 right-[15%] w-auto pointer-events-none z-0" />
       <img src="/blossom_3.png" alt="" className="absolute top-80 h-34 right-[3%] w-auto pointer-events-none z-0" />
+
+      {/* Falling petals: each column spans the section height and slides down by 100% of it */}
+      {petals.map((p, i) => (
+        <div
+          key={`petal-${i}`}
+          className="absolute inset-y-0 pointer-events-none z-20"
+          style={{ left: p.left, animation: `petalFall ${p.duration}s linear ${p.delay}s infinite` }}
+        >
+          <div
+            className="absolute top-0"
+            style={{ animation: `petalSway ${2.8 + (i % 4) * 0.5}s ease-in-out ${i * 0.4}s infinite alternate` }}
+          >
+            <PixelPetal shape={petalShapes[p.shape]} pixel={p.pixel} />
+          </div>
+        </div>
+      ))}
 
       {/* Title */}
       <div className="relative z-10 flex justify-center items-center gap-3 mb-10">

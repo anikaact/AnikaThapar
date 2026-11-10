@@ -30,6 +30,9 @@ export default function Home() {
             <a href="#courses" className="text-black underline hover:opacity-70">
               courses
             </a>
+            <a href="#career" className="text-black underline hover:opacity-70">
+              career
+            </a>
           </nav>
         </div>
       </div>
@@ -37,7 +40,7 @@ export default function Home() {
       {/* Main content area */}
       <main className="flex-1 bg-white p-8 md:p-16">
         {/* About Me Section */}
-        <div className="flex flex-col items-center mt-50">
+        <div id="about" className="flex flex-col items-center mt-50 scroll-mt-40">
           {/* Smiski + text share a relative container so smiski moves with the text */}
           <div className="relative max-w-2xl w-full">
             {/* Smiski Image - adjust top/left relative to the text block */}

@@ -164,18 +164,25 @@ function Bubble({ size }: { size: number }) {
   );
 }
 
-// Bubbles drifting upward
+// Bubbles that rise from the bottom of the section to the top, then respawn.
+// duration = seconds for one full trip; negative delay = already mid-trip on page load.
 const bubbles = [
-  { size: 14, left: "6%", top: "30%", delay: 0 },
-  { size: 9, left: "8%", top: "36%", delay: 1.2 },
-  { size: 20, left: "4%", top: "60%", delay: 2.4 },
-  { size: 11, left: "10%", top: "72%", delay: 0.6 },
-  { size: 16, left: "92%", top: "20%", delay: 1.8 },
-  { size: 10, left: "95%", top: "28%", delay: 0.3 },
-  { size: 22, left: "90%", top: "55%", delay: 3 },
-  { size: 12, left: "94%", top: "68%", delay: 1 },
-  { size: 8, left: "20%", top: "12%", delay: 2 },
-  { size: 13, left: "80%", top: "8%", delay: 2.8 },
+  { size: 14, left: "4%", duration: 18, delay: 0 },
+  { size: 9, left: "7%", duration: 22, delay: -6 },
+  { size: 20, left: "10%", duration: 26, delay: -15 },
+  { size: 11, left: "15%", duration: 19, delay: -11 },
+  { size: 16, left: "22%", duration: 24, delay: -3 },
+  { size: 8, left: "30%", duration: 17, delay: -9 },
+  { size: 12, left: "38%", duration: 23, delay: -18 },
+  { size: 18, left: "47%", duration: 27, delay: -7 },
+  { size: 10, left: "55%", duration: 20, delay: -14 },
+  { size: 14, left: "63%", duration: 25, delay: -2 },
+  { size: 9, left: "71%", duration: 18, delay: -12 },
+  { size: 22, left: "79%", duration: 28, delay: -20 },
+  { size: 11, left: "86%", duration: 21, delay: -5 },
+  { size: 16, left: "91%", duration: 24, delay: -16 },
+  { size: 10, left: "95%", duration: 19, delay: -8 },
+  { size: 13, left: "97%", duration: 26, delay: -22 },
 ];
 
 // Light rays streaming down from the surface
@@ -219,14 +226,19 @@ export default function Purdue() {
         />
       ))}
 
-      {/* Bubbles */}
+      {/* Bubbles: each column spans the full section height and slides up by 100% of it */}
       {bubbles.map((b, i) => (
         <div
           key={`bubble-${i}`}
-          className="absolute pointer-events-none"
-          style={{ left: b.left, top: b.top, animation: `bubbleRise 7s ease-in-out ${b.delay}s infinite` }}
+          className="absolute inset-y-0 pointer-events-none"
+          style={{ left: b.left, animation: `bubbleFloat ${b.duration}s linear ${b.delay}s infinite` }}
         >
-          <Bubble size={b.size} />
+          <div
+            className="absolute bottom-0"
+            style={{ animation: `bubbleWobble ${2.5 + (i % 4) * 0.6}s ease-in-out ${i * 0.3}s infinite alternate` }}
+          >
+            <Bubble size={b.size} />
+          </div>
         </div>
       ))}
 
